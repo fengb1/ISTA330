@@ -15,7 +15,7 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
      while (extraCookies > 0) {
        for (var i = 0; i < cookies.length; i++) {
          if (cookies[i] != max) {
-           var diff = maximum - cookies[i];
+           var diff = max - cookies[i];
            extraCookies -= diff;
            cookies[i] += diff;
          }
