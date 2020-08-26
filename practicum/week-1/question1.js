@@ -8,14 +8,16 @@ For example given the input array [5, 6, 1], the running sum is
 var runningSum = function(input) {
    var count;
    var sum = 0;
+   var result = [];
    for (var i = 0; i < input.length; i++) {
      count = i;
      while (count > -1) {
        sum += input[count];
        count--;
      }
-     input[i] = sum;
+     result[i] = sum;
+     sum = 0
    }
-   
-   return input;
+
+   return result;
 };
