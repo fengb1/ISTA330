@@ -1,5 +1,5 @@
 /*
-You are given strings A and B.  
+You are given strings A and B.
 How many of the letters in B are also present in A?
 
 The letters in A are guaranteed distinct, and all characters in A and B are letters.
@@ -11,5 +11,14 @@ The letters in A are guaranteed distinct, and all characters in A and B are lett
 */
 
 var howManyCommon = function(A, B) {
+  var count = 0;
+  for (var i = 0; i < A.length; i++) {
+    for (var j = 0; j < B.length; j++) {
+      if (B.charAt(j) == A.charAt(i)) {
+        count++;
+      }
+    }
+  }
 
+  return count;
 };
