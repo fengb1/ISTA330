@@ -1,5 +1,5 @@
 /*
-Given an array of numbers, for each number in the array 
+Given an array of numbers, for each number in the array
 find out how many numbers in the array are both even and bigger than the number.
 
 Example:
@@ -8,5 +8,17 @@ output: [1, 0, 1, 2]
 */
 
 var biggerAndEven = function(input) {
+  var result = [];
+  var count = 0;
+  for (var i = 0; i < input.length; i++) {
+    for (var j = 0; j < input.length; j++) {
+      if (input[j] > input[i] && input[j] % 2 == 0) {
+        count++;
+      }
+    }
+    result[i] = count;
+    count = 0;
+  }
 
+  return result;
 };
