@@ -25,7 +25,6 @@ var minimalReduction = function(n) {
     else {
       n = n - 1;
       count++;
-      console.log(n);
     }
   }
 
