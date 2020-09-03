@@ -16,35 +16,36 @@ output: 4 because the following partition has the highest number of balanced sub
 var maxBalanceNumber = function(input) {
   var result = 0;
   while (input.length > 0) {
-    var temp = input[0];
     var count = 0;
-    var sub = false;
-    var position;
-    for (var i = 1; i < input.length; i++) {
-      if (temp == input[i] && !sub) {
+    var temp = input[0];
+    var check = false;
+    var sub = 0;
+    for (var i = 0; i < input.length; i++) {
+      if (temp == input[i] && !check) {
         count++;
       }
-      else if (temp == input[i] && sub) {
-        position = i;
+      else if (temp == input[i] && check) {
+        sub = 0;
         break;
       }
       else {
         count--;
-        sub = true;
+        check = true;
       }
       if (count == 0) {
-        position = i;
+        sub = i;
         break;
       }
     }
-    if (position > 0) {
+    if (sub > 0) {
       result++;
-      input = input.slice(position);
+      input = input.slice(sub + 1);
     }
     else {
-      input = input.slice(position);
+      input = input.slice(1);
     }
+    sub = 0;
   }
 
-  return result - 1;
+  return result;
 };
