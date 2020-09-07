@@ -23,7 +23,7 @@ const q3 = [{
         [1],
        [1,1],
       [1,2,1],
-     [1,3,3,1] 
+     [1,3,3,1]
    ]
 },
 {
@@ -198,7 +198,7 @@ function isEqual(a1, a2){
     if((t === 'boolean') || (t === 'number') || (t === 'string')){
         return a1 === a2;
     }
-    
+
     if(!a1 || !a2 || a1.length !== a2.length) {
         return false;
     }
@@ -214,10 +214,10 @@ for(let f of result){
     for(let x of f.cases){
         let trial = {status: 'failed',
          input: x.input + "",
-        expected: x.output, 
+        expected: x.output,
         output: undefined};
         trial.output = f.functionCode(...x.input);
-        
+
         if(isEqual(x.output, trial.output)) {
             trial.status = 'success'
         }
@@ -257,12 +257,10 @@ function showTestsResults() {
                 li.className = 'failed';
             } else {
                 li.className = 'success';
-            }                                       
+            }
             ol.appendChild(li);
         }
         newDiv.appendChild(ol);
         document.body.appendChild(newDiv);
     }
 }
-
-
