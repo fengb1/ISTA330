@@ -23,7 +23,6 @@ var powerSet = function(input) {
   var result = [];
   for (var i = 0; i < Math.pow(2, input.length); i++) {
     for (var j = 0; j < input.length; j++) {
-      console.log(i & (1<<j));
       if ((i & (1<<j)) > 0) {
         subset.push(input[j]);
       }
