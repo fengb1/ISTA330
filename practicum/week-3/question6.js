@@ -1,18 +1,18 @@
 /*
-A zero-indexed array A of length N 
-contains all integers from 0 to N-1. 
-Find and return the longest length of set S, 
-where S[i] = {A[i], A[A[i]], A[A[A[i]]], ... } 
+A zero-indexed array A of length N
+contains all integers from 0 to N-1.
+Find and return the longest length of set S,
+where S[i] = {A[i], A[A[i]], A[A[A[i]]], ... }
 subjected to the rule below:
 
-Suppose the first element in S starts with 
-the selection of element A[i] of index = i, 
-the next element in S should be A[A[i]], 
-and then A[A[A[i]]]… Then you should stop 
-adding elements to S just before a duplicate element 
+Suppose the first element in S starts with
+the selection of element A[i] of index = i,
+the next element in S should be A[A[i]],
+and then A[A[A[i]]]… Then you should stop
+adding elements to S just before a duplicate element
 occurs in S.
 
-Example: 
+Example:
 input: A = [5,4,0,3,1,6,2]
 output:  4
      because the longest S is:
@@ -25,5 +25,12 @@ output:  4
 */
 
 var longestNested = function(A) {
-
+  var count = 1;
+  var check = A[0];
+  var temp = A[check];
+  while (temp != check) {
+    temp = A[temp];
+    count++;
+  }
+  return count;
 };
