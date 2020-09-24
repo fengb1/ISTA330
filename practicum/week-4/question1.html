@@ -52,18 +52,23 @@
              rose,
              waterlily
        ];
-       var result = "";
-       result += "<table><tr>";
-       for (var i = 0; i < 8; i++) {
-         if (i % 4 == 0 && i != 0) {
-           result += "</tr><tr>";
+
+       function display() {
+         var result = "";
+         result += "<table><tr>";
+         for (var i = 0; i < 8; i++) {
+           if (i % 4 == 0 && i != 0) {
+             result += "</tr><tr>";
+           }
+           result += "<td> <img src='images/" + flowers[i].picture + "'>";
+           result += "<figcaption style='text-align:center'>" +
+           flowers[i].name + "</figcaption></td>";
          }
-         result += "<td> <img src='images/" + flowers[i].picture + "'>";
-         result += "<figcaption style='text-align:center'>" + flowers[i].name + "</figcaption></td>";
+         result += "</tr>";
+         console.log(result);
+         document.getElementById("flowersDiv").innerHTML = result;
        }
-       result += "</tr>";
-       console.log(result);
-       document.getElementById("flowersDiv").innerHTML = result;
+       display();
 
     </script>
 </body>
