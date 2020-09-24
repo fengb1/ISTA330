@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="question">
-        Using the array flowers below, 
+        Using the array flowers below,
         display the flowers. Use the div 'flowersDiv'.
         You should display the flowers in two rows,
         each row containing 4 flowers.
@@ -19,13 +19,14 @@
     </div>
     <script>
         /*
-           Using the array flowers below, 
+           Using the array flowers below,
            display the flowers. Use the div 'flowersDiv'.
            You should display the flowers in two rows,
            each row containing 4 flowers.
            For each flower, you should show the image
            and under the image display its name.
         */
+
        class Flower {
            constructor(name, pictureName) {
                this.name = name;
@@ -34,13 +35,13 @@
        }
        let daffodil = new Flower('Daffodil', 'daffodil.png');
        let cherryblossom = new Flower('Cherry blossom', 'cherryblossom.png');
-       let lily = new Flower('Lily', 'lily.png');
-       let daisy = new Flower('Daisy', 'daisy.png');
+       let lily = new Flower('Lily', 'lily.jpg');
+       let daisy = new Flower('Daisy', 'daisy.jpg');
        let sunflower = new Flower('Sunflower', 'sunflower.png');
        let tulip = new Flower('Tulip', 'tulip.png');
        let rose = new Flower('Rose', 'rose.png');
        let waterlily = new Flower('Water lily', 'waterlily.png');
-       
+
        let flowers = [
              daffodil,
              cherryblossom,
@@ -51,6 +52,19 @@
              rose,
              waterlily
        ];
+       var result = "";
+       result += "<table><tr>";
+       for (var i = 0; i < 8; i++) {
+         if (i % 4 == 0 && i != 0) {
+           result += "</tr><tr>";
+         }
+         result += "<td> <img src='images/" + flowers[i].picture + "'>";
+         result += "<figcaption style='text-align:center'>" + flowers[i].name + "</figcaption></td>";
+       }
+       result += "</tr>";
+       console.log(result);
+       document.getElementById("flowersDiv").innerHTML = result;
+
     </script>
 </body>
 </html>
